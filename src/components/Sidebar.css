@@ -1,0 +1,86 @@
+.main_SidebarContainer{
+    margin-top: 10px;
+}
+.SidebarButton > button{
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 40px;
+    padding:5px 10px;
+    box-shadow:2px 2px 2px #ccc;
+    margin-left: 20px;
+}
+.SidebarButton > button > span{
+font-size: 16px;
+margin-right: 20px;
+margin-left: 10px;
+}
+.SidebarOptions{
+    margin-top: 10px;
+}
+
+.progress_bar {
+    padding: 0px 20px;
+}
+.progress_bar span {
+    display: block;
+    color:#333;
+    font-size: 13px;
+}
+.SidebarOption{
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    border-radius: 0px 20px 20px 0px;
+}
+.SidebarOption:hover{
+        background: whitesmoke;
+        cursor: pointer;
+    }
+    .SidebarOption > svg.MuiSvgIcon-root {
+        color:rgb(78, 78, 78);
+    }
+    .SidebarOption > span {
+        margin-left: 15px;
+        font-size: 13px;
+        font-weight: 500;
+        color:rgb(78, 78, 78)
+    }
+    .ModalPopup{
+        top: 50%;
+        background-color: white;
+        width: 500px;
+        margin: 0px auto;
+        position: relative;
+        transform: translateY(-50%);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .ModalHeading{
+        text-align: center;
+        border-bottom: 1px solid lightgray;
+        height: 40px;
+    }
+   .modal__submit {
+        width: 100%;
+        background: rgb(144, 3, 144);
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 15px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 0;
+        outline: 0;
+        margin-top:20px;
+        cursor: pointer;
+    }
+    .UploadPara{
+    background: rgb(51, 152, 51);
+    color: white;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    letter-spacing: 1px;
+    }

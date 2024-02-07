@@ -1,0 +1,27 @@
+.Loginpage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 26px;
+  width: 420px;
+  background: rgb(224, 220, 220);
+  margin: 0px auto;
+  margin-top: 100px;
+}
+.Loginpage > img {
+    width: 100px;
+  }
+  .Loginpage > button {
+    width: 100%;
+    background: rgb(146, 3, 146);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    font-size: 17px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    border-radius: 25px;
+    border: 0;
+    margin-top:20px;
+    cursor: pointer;
+  }
+

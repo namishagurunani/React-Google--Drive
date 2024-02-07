@@ -1,0 +1,66 @@
+.main_DataContainer{
+    padding: 10px 0px 0px 20px;
+    flex: 1 1;
+}
+.DataHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    height: 40px;
+}
+    .DataHeader > .headerLeft {
+        display: flex;
+        align-items: center;
+    }
+    .DataHeader > .headerRight svg {
+        margin:0px 10px;
+    }
+   .DataGrid{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+   }
+   .DataFile{
+    margin: 10px;
+    padding: 10px 0px 0px 0px;
+    min-width: 200px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgb(204 204 204 / 46%);
+   }
+    .DataFile > svg {
+        font-size: 60px;
+        color:gray
+    }
+    .DataFile > p {
+        border-top: 1px solid #ccc;
+        margin-top: 5px;
+        font-size: 12px;
+        background: whitesmoke;
+        padding: 10px 0px;
+    }
+
+.DataListRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+    .DataListRow > p {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+    }
+        .DataListRow > b {
+            display: flex;
+            align-items: center;
+        }
+        .DataListRow > svg {
+            font-size: 22px;
+            margin:10px
+        }
+      
+      
