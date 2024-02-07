@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import FormatAlignCenterIcon from '@material-ui/icons/FormatAlignCenter';
-import SearchIcon from '@material-ui/icons/Search';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import AppsIcon from '@material-ui/icons/Apps';
-import SettingsIcon from '@material-ui/icons/Settings';
-import { Avatar } from '@material-ui/core';
+import SearchIcon from "@mui/icons-material/Search";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
+import FormatAlignCenterOutlinedIcon from "@mui/icons-material/FormatAlignCenterOutlined";
+import { Avatar } from '@mui/material';
 import './Header.css';
 
 const Header = ({ photoURL, setSearchTerm }) => {
@@ -22,15 +22,15 @@ const Header = ({ photoURL, setSearchTerm }) => {
             <div className='HeaderSearch'>
                 <SearchIcon />
                 <input type="text" placeholder='Search in Drive' onChange={handleSearch} />
-                <FormatAlignCenterIcon />
+                <FormatAlignCenterOutlinedIcon />
             </div>
             <div className='HeaderIcons'>
                 <span>
                     <HelpOutlineIcon />
-                    <SettingsIcon />
+                    <SettingsOutlinedIcon />
                 </span>
                 <span>
-                    <AppsIcon />
+                    <AppsOutlinedIcon />
                     <Avatar src={photoURL} />
                 </span>
             </div>

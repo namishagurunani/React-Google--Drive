@@ -1,11 +1,11 @@
-import QueryBuilderOutlinedIcon from '@material-ui/icons/QueryBuilderOutlined';
-import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
-import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
-import CloudQueueIcon from '@material-ui/icons/CloudQueue';
-import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
-import MobileScreenShareIcon from '@material-ui/icons/MobileScreenShare';
-import DevicesIcon from '@material-ui/icons/Devices';
-import { Modal } from '@material-ui/core';
+import MobileScreenShareOutlinedIcon from "@mui/icons-material/MobileScreenShareOutlined";
+import DevicesIcon from "@mui/icons-material/Devices";
+import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
+import QueryBuilderOutlinedIcon from "@mui/icons-material/QueryBuilderOutlined";
+import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import CloudQueueIcon from "@mui/icons-material/CloudQueue";
+import { Modal } from '@mui/material';
 import { useState } from 'react';
 import { db, storage } from './firebase';
 import firebase from "firebase";
@@ -56,7 +56,7 @@ const Sidebar = () => {
             </div>
             <div className='SidebarOptions'>
             <div className='SidebarOption'>
-                    <MobileScreenShareIcon />
+                    <MobileScreenShareOutlinedIcon />
                     <span>My Drive</span>
                 </div>
                 <div className='SidebarOption'>

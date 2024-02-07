@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { db } from './firebase';
 import './Data.css';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 const Data = ({ searchTerm }) => {
     const [files, setFiles] = useState([]);
