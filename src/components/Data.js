@@ -4,6 +4,7 @@ import './Data.css';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import CoPresentIcon from '@mui/icons-material/CoPresent';
 
 const Data = ({ searchTerm }) => {
     const [files, setFiles] = useState([]);
@@ -57,6 +58,7 @@ const Data = ({ searchTerm }) => {
                         <p><AccountCircleIcon style={{ color: 'gray' }}/> me</p> 
                         <p>{new Date(file.data.timestamp?.seconds * 1000).toUTCString()}</p>
                         <p>{convertingToBytes(file.data.size)}</p>
+                        <CoPresentIcon></CoPresentIcon>
                     </div>
                 ))}
             </div>
