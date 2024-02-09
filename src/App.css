@@ -1,6 +1,14 @@
-body{
+/* App.css */
+.body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: black;
-}.Loginpage{
+}
+
+/* Add any other styles as needed */
+.Loginpage{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +33,7 @@ body{
     margin-top:20px;
     font-weight: 700;
     cursor: pointer;
-    border: 6px solid rgb(133, 155, 198);
+    border: 2px solid rgb(133, 155, 198);
     box-shadow: 0 0 10px rgb(66, 66, 66);
   }
   .Loginpage > button:hover {

@@ -1,4 +1,6 @@
-.main_HeaderContainer{
+body{
+    background-color: white;
+}.main_HeaderContainer{
     display: flex;
     justify-content: space-between;
     align-items: center;
