@@ -113,14 +113,14 @@ const Data = ({ searchTerm }) => {
                 <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', bgcolor: 'background.paper', boxShadow: 24, p: 4, width: 200 }}>
                     {selectedFile && (
                         <div>
-                           <span> <DeleteOutlineIcon class="button" type="button" onClick={() => handleDeleteFile(selectedFile.id)}/>Move to trash</span>
+                           <span onClick={() => handleDeleteFile(selectedFile.id)}>Move to trash</span>
                             <br/>
                             <EmailShareButton
                                 subject="Check out this file"
                                 body={`File Name: ${selectedFile.data.filename}\nFile Size: ${convertingToBytes(selectedFile.data.size)}`}
                                 url={selectedFile.data.fileURL} style={{cursor:"pointer"}}
                             >
-                                <span><PersonAddAltIcon></PersonAddAltIcon>Share</span>
+                                <span>Share</span>
                             </EmailShareButton>
                         </div>
                     )}
