@@ -11,7 +11,7 @@ This project is a Google Drive clone built using ReactJS. It allows users to upl
 ## Technologies Used
 
 - ReactJS
-- [Other dependencies or libraries used]
+- Material UI
 
 ## Setup
 
