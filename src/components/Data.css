@@ -64,7 +64,6 @@
         }
         .share-icon {
             opacity: 0;
-            background-color: gray;
             cursor: pointer;
             transition: opacity 0.3s ease; /* Add transition for smooth animation */
         }
@@ -77,7 +76,6 @@
         }
         .button{
            height: 24px;
-           background-color: gray;
            opacity: 0;
            cursor: pointer;
         }
