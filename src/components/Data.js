@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { db } from './firebase';
 import './Data.css';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { EmailShareButton } from 'react-share'; // Import the necessary component
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import ListIcon from '@mui/icons-material/List';
+import InfoIcon from '@mui/icons-material/Info';
 
 const Data = ({ searchTerm }) => {
     const [files, setFiles] = useState([]);
@@ -37,6 +39,11 @@ const Data = ({ searchTerm }) => {
         return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
     };
 
+    // Filter files based on search term
+    const filteredFiles = files.filter(file =>
+        file.data.filename.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     // Function to delete a file
     const handleDeleteFile = (fileId) => {
         db.collection("myfiles").doc(fileId).delete()
@@ -64,11 +71,25 @@ const Data = ({ searchTerm }) => {
     // JSX rendering
     return (
         <div className='main_DataContainer'>
-            <div className='DataHeader'>
+             <div className='DataHeader'>
                 <div className="headerLeft">
                     <p>My Drive</p>
+                    <ArrowDropDownIcon />
+                </div>
+                <div className="headerRight">
+                    <ListIcon />
+                    <InfoIcon  />
                 </div>
             </div>
+            <div>
+                <div className='DataGrid'>
+                    {files.map(file => (
+                        <div className='DataFile' key={file.id}>
+                            <InsertDriveFileIcon />
+                            <p>{file.data.filename}</p>
+                        </div>
+                    ))}
+                </div>
             <div className='DataList'>
                 <div className='DataListRow'>
                     <p><b>Name <ArrowDownwardIcon /></b></p>
@@ -77,7 +98,7 @@ const Data = ({ searchTerm }) => {
                     <p><b>File Size</b></p>
                     <p></p>
                 </div>
-                {files.map(file => (
+                {filteredFiles.map(file => (
                     <div 
                         className='DataListRow' 
                         key={file.id} 
@@ -127,6 +148,7 @@ const Data = ({ searchTerm }) => {
                 </Box>
             </Modal>
         </div>
+    </div>
     );
 };
 

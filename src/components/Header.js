@@ -12,6 +12,7 @@ const Header = ({ photoURL, setSearchTerm }) => {
 
     // Function to handle search input change
     const handleSearch = (e) => {
+        // console.log('Search term:', e.target.value);
         setSearchTerm(e.target.value);
     };
 
