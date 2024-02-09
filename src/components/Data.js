@@ -4,13 +4,16 @@ import './Data.css';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import CoPresentIcon from '@mui/icons-material/CoPresent';
 import { EmailShareButton } from 'react-share'; // Import the necessary component
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 
 const Data = ({ searchTerm }) => {
     const [files, setFiles] = useState([]);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedFile, setSelectedFile] = useState(null);
 
     // Fetch files from Firestore on component mount
     useEffect(() => {
@@ -43,6 +46,19 @@ const Data = ({ searchTerm }) => {
             .catch(error => {
                 console.error("Error removing document: ", error);
             });
+        closeModal(); // Close the modal after deleting the file
+    };
+
+    // Function to open modal
+    const openModal = (file) => {
+        setSelectedFile(file);
+        setModalOpen(true);
+    };
+
+    // Function to close modal
+    const closeModal = () => {
+        setSelectedFile(null);
+        setModalOpen(false);
     };
 
     // JSX rendering
@@ -60,10 +76,16 @@ const Data = ({ searchTerm }) => {
                     <p><b>Last Modified</b></p>
                     <p><b>File Size</b></p>
                     <p></p>
-                    <p></p>
                 </div>
                 {files.map(file => (
-                    <div className='DataListRow' key={file.id}>
+                    <div 
+                        className='DataListRow' 
+                        key={file.id} 
+                        onContextMenu={(e) => {
+                            e.preventDefault();
+                            openModal(file);
+                        }}
+                    >
                         <a href={file.data.fileURL} target='_blank' rel="noreferrer">
                             <p><InsertDriveFileIcon /> {file.data.filename.slice(0,28)}</p>
                         </a>
@@ -78,10 +100,32 @@ const Data = ({ searchTerm }) => {
                         >
                           <PersonAddAltIcon></PersonAddAltIcon> {/* This is your share icon */}
                         </EmailShareButton>
-                        <DeleteOutlineIcon class="button" type="button" onClick={() => handleDeleteFile(file.id)}/>
                     </div>
                 ))}
             </div>
+            {/* Modal */}
+            <Modal
+                open={modalOpen}
+                onClose={closeModal}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', bgcolor: 'background.paper', boxShadow: 24, p: 4, width: 200 }}>
+                    {selectedFile && (
+                        <div>
+                           <span> <DeleteOutlineIcon class="button" type="button" onClick={() => handleDeleteFile(selectedFile.id)}/>Move to trash</span>
+                            <br/>
+                            <EmailShareButton
+                                subject="Check out this file"
+                                body={`File Name: ${selectedFile.data.filename}\nFile Size: ${convertingToBytes(selectedFile.data.size)}`}
+                                url={selectedFile.data.fileURL} style={{cursor:"pointer"}}
+                            >
+                                <span><PersonAddAltIcon></PersonAddAltIcon>Share</span>
+                            </EmailShareButton>
+                        </div>
+                    )}
+                </Box>
+            </Modal>
         </div>
     );
 };

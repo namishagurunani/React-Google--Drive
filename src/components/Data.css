@@ -76,9 +76,6 @@
         }
         .button{
            height: 24px;
-           opacity: 0;
            cursor: pointer;
         }
-        .DataListRow:hover .button {
-            opacity: 1;
-        }
+       
