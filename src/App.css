@@ -1,42 +1,74 @@
 /* App.css */
-.body{
-  height: 100vh;
+
+/* Global styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* Example font */
+}
+
+/* Center content vertically and horizontally */
+.body {
+  min-height: 100vh; /* Changed to min-height for responsiveness */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: black;
 }
 
-/* Add any other styles as needed */
-.Loginpage{
+/* Login page container */
+.Loginpage {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 26px;
-  width: 420px;
+  max-width: 420px; /* Changed to max-width for responsiveness */
+  width: 90%; /* Adjusted to percentage for responsiveness */
   background: transparent;
-  margin: 0px auto;
   margin-top: 100px;
 }
+
+/* Responsive image */
 .Loginpage > img {
-    width: 10vw;
-    height: 20vh;
+  width: 80%; /* Adjust size based on percentage for responsiveness */
+  max-width: 200px; /* Add max-width for responsiveness */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive button */
+.Loginpage > button {
+  background: rgb(125, 169, 251);
+  color: rgb(45, 41, 41);
+  padding: 14px 25px;
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 2px solid rgb(133, 155, 198);
+  box-shadow: 0 0 10px rgb(66, 66, 66);
+}
+
+.Loginpage > button:hover {
+  background: rgb(140, 173, 234);
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .Loginpage {
+    width: 80%; /* Adjust width for smaller screens */
   }
   .Loginpage > button {
-    background: rgb(125, 169, 251);
-    color: rgb(45, 41, 41);
-    padding: 14px 25px;
-    font-size: 14px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    border-radius: 5px;
-    margin-top:20px;
-    font-weight: 700;
-    cursor: pointer;
-    border: 2px solid rgb(133, 155, 198);
-    box-shadow: 0 0 10px rgb(66, 66, 66);
+    font-size: 13px;
   }
-  .Loginpage > button:hover {
-    background: rgb(140, 173, 234);
-  }
+}
 
+@media (max-width: 480px) {
+  .Loginpage {
+    width: 90%; /* Further adjust width for very small screens */
+  }
+  .Loginpage > button {
+    font-size: 12px;
+  }
+}

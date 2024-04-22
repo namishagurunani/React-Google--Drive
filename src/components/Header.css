@@ -46,4 +46,30 @@ body{
 svg.MuiSvgIcon-root{
         margin: 0px 10px;
     }
+    /* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .HeaderIcons > span {
+        margin-left: 0;
+    }
+    .HeaderLogo{
+        padding-right: 5rem;
+     }
+     .HeaderIcons{
+        padding-left: 5rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .HeaderIcons > span {
+        margin-left: 12px;
+    }
+    .HeaderLogo > span {
+      font-size: 18px; /* Further reduced font size for very small screens */
+    }
+    .HeaderLogo{
+       padding-right: 5rem;
+    }
+    .HeaderIcons{
+        padding-left: 5rem;
+    }
+  }
         

@@ -108,7 +108,7 @@ const Data = ({ searchTerm }) => {
                         }}
                     >
                         <a href={file.data.fileURL} target='_blank' rel="noreferrer">
-                            <p><InsertDriveFileIcon /> {file.data.filename.slice(0,28)}</p>
+                            <p><InsertDriveFileIcon /> {file.data.filename.slice(0,18)}</p>
                         </a>
                         <p><AccountCircleIcon style={{ color: 'gray' }}/> me</p> 
                         <p>{new Date(file.data.timestamp?.seconds * 1000).toUTCString()}</p>
